@@ -1,0 +1,28 @@
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="请输入查询内容" value="{{SearchData.value}}" bindinput='SearchInput' bindconfirm="SearchConfirm" />
+      <view class="weui-icon-clear" wx:if="{{SearchData.value.length > 0}}" bindtap="SearchClear">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+  </view>
+    <view class="weui-search-bar__cancel-btn" bindtap="SearchConfirm">
+         <text wx:if="{{SearchData.value.length>0}}" data-key='search'>搜索</text>
+         <view class="icon-small-wrp">
+           <icon class="icon-small" type="cancel" size="23"></icon>
+         </view>
+    </view>
+</view>
+<view class="db">
+  <view class="image_group"> 
+    <image src="../image/icon_insert.png" class="image_db" bindtap="db_insert"></image>
+    <text>添加数据库配置</text>
+  </view>
+  <view    wx:for="{{dbarrays}}" wx:key="key" class="image_group">
+    <image src="../image/table.png" class="image_db" id="{{item.dbId}} "></image>
+    <text>{{item.shortName}}</text>
+
+  </view>
+</view>

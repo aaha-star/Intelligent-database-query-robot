@@ -1,0 +1,16 @@
+/* pages/db-insert/db-insert.wxss */
+@import "../lib/weui.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+
+.btn-area{
+  display:flex;
+
+}
+
+.page-section-title{
+  display: flex;
+  justify-content: center;
+}
