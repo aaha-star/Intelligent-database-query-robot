@@ -19,9 +19,9 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 function dbquery(){}
-function dbmodify(){
+function dbmodify(dbid){
     wx.redirectTo({
-      url: '/pages/db-modify/dbmodify',
+      url: '/pages/db-modify/dbmodify?id='+dbid,
     })
 }
 
@@ -38,6 +38,9 @@ function dbdelete(dbid){
         },
         success(res){
           console.log(res)
+          wx.switchTab({
+            url: '../index/index',
+          })
         },
         fail(res){
           console.log(res)

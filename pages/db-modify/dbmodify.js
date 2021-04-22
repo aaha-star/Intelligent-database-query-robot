@@ -1,4 +1,10 @@
 // pages/db-modify/dbmodify.js
+const app = getApp()
+let gb=app.globalData
+let baseurl=app.globalData.baseurl
+let login=require("../../utils/login")
+let check=require("../../utils/checksname")
+
 Page({
 
 
@@ -52,52 +58,49 @@ Page({
       driverId:e.detail.value
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+
   onShow: function () {
 
   },
+ 
+  formSubmit:function(e){
+    console.log(e)
+    var pages = getCurrentPages()    //获取加载的页面
+    var currentPage = pages[pages.length - 1]    //获取当前页面的对象
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    var url = currentPage.route    //当前页面url
+    
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    var options = currentPage.options    //如果要获取url中所带的参数可以查看options
+    let id=options.id
+    let dbdata=e.detail.value
+    dbdata.dbDriverId=this.data.driverId
+    console.log(dbdata.dbDriverId)
+    let opid=wx.getStorageSync('openid')
+    console.log(opid)
+    wx.request({
+      url:baseurl+'/database/'+id,
+      data:dbdata,
+      method:"PUT",
+      header:{
+        'content':'application/json',
+        'Authorization':opid
+      },
+      success(res){
+        console.log(res)
+        wx.switchTab({
+          url: '../index/index',
+        })
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
   }
+
 })

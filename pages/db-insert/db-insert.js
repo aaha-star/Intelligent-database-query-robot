@@ -74,6 +74,9 @@ Page({
       },
       success(res){
         console.log(res)
+        wx.switchTab({
+          url: '../index/index'
+        })
       },
       console(res){
         console.log(res)
@@ -82,9 +85,7 @@ Page({
       wx.showModal({
         title:'数据库配置提交'
       })
-      wx.switchTab({
-        url: '../index/index'
-      })
+      
 
   }
 

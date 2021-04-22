@@ -1,10 +1,11 @@
-
+<import src="../db-insert/db-insert.wxml"></import>
 <view>
   <form catchsubmit="formSubmit" catchreset="formReset">
 
     <view class="page-section">
         <view class="page-section-title">新增数据库配置</view>
     </view>
+    <template is="dbform"></template>
 <template name="dbform">
   <view class="page-section">
     <view class="weui-cells__title">数据库主机IP</view>
@@ -70,6 +71,7 @@
    
 </view>
 
+<template is="dbforms"></template>
 <template name="dbforms">
 <view class="page-section">
     <view class="weui-cells__title">展示短名</view>
