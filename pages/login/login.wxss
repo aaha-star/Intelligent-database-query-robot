@@ -69,5 +69,3 @@
   height: 45px;
   font-size: 17.5px;
 }
-
-@import 'login-wxa-auto-dark.wxss'

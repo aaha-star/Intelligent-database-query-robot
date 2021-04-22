@@ -91,4 +91,3 @@
   display: flex;
   flex-direction: column;
 }
-@import 'index-wxa-auto-dark.wxss'
