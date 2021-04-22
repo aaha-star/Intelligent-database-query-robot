@@ -1,0 +1,2 @@
+/* pages/db-modify/dbmodify.wxss */
+@import "../db-insert/db-insert.wxss";

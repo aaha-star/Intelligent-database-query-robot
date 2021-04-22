@@ -51,6 +51,7 @@
       </view>
     </view>
   </view>
+</template>
 
 <view class="page-section">
     <view class="weui-cells__title">驱动Id</view>
@@ -58,18 +59,18 @@
     
       <view class="weui-cells weui-cells_after-title">
         <radio-group bindchange="checkboxChange">
-          <label class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="value">
+          <view class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="value">
             <view class="weui-cell__hd">
               <radio value="{{item.value}}" checked="{{item.checked}}" name="dbDriverId"/>
             </view>
             <view class="weui-cell__bd">{{item.name}}</view>
-          </label>
+          </view>
         </radio-group>
       </view>
    
 </view>
 
-
+<template name="dbforms">
 <view class="page-section">
     <view class="weui-cells__title">展示短名</view>
     <view class="weui-cells weui-cells_after-title">
@@ -78,12 +79,12 @@
       </view>
     </view>
   </view>
-  
+</template>
   <view class="btn-area">
         <button style="margin: 30rpx; width=20rpx" type="primary" formType="submit">Submit</button>
         <button style="margin: 30rpx 0" formType="reset">Reset</button>
   </view>
-</template>
+
   </form>
 
 </view>

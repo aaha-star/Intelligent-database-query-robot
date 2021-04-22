@@ -4,9 +4,8 @@
     "pages/mine/mine",
     "pages/db-insert/db-insert",
     "pages/logs/logs",
-    "pages/login/login"
-    
-   
+    "pages/login/login",
+    "pages/db-modify/dbmodify"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,5 +41,4 @@
   "debug": true,
   "style": "v2",
   "sitemapLocation": "sitemap.json"
-
 }

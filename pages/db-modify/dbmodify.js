@@ -1,11 +1,10 @@
-// pages/db-insert/db-insert.js
-const app = getApp()
-let gb=app.globalData
-let login=require("../../utils/login")
-let check=require("../../utils/checksname")
+// pages/db-modify/dbmodify.js
 Page({
+
+
+
   /**
-   * 页面的初始数据
+   * 生命周期函数--监听页面加载
    */
   data: {
     items:[
@@ -53,41 +52,52 @@ Page({
       driverId:e.detail.value
     })
   },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
 
+  },
 
-  formSubmit: function(e){
-    console.log(e.detail.value)
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
 
-    let  dbdata=e.detail.value
-    dbdata.dbDriverId=this.data.driverId
-    check.checksname(dbdata.shortName)
-    login.getopid()
-    dbdata.openId=wx.getStorageSync('openid')
+  },
 
-    wx.request({
-      url: app.globalData.baseurl+'/database/',
-      data:dbdata,
-      method:'post',
-      header:{
-        'content-type': 'application/json' ,// 默认值
-        'Authorization':dbdata.openId
-      },
-      success(res){
-        console.log(res)
-      },
-      console(res){
-        console.log(res)
-      }
-      })
-      wx.showModal({
-        title:'数据库配置提交'
-      })
-      wx.switchTab({
-        url: '../index/index'
-      })
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
 
   }
-
-
-  
 })

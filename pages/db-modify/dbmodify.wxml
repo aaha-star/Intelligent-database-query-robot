@@ -1,0 +1,30 @@
+<!--pages/db-modify/dbmodify.wxml-->
+<import src="../db-insert/db-insert.wxml"></import>
+<form catchsubmit="formSubmit" catchreset="formReset">
+<view class="page-section">
+    <view class="page-section-title">修改数据库配置</view>
+</view>
+<template is="dbform"></template>
+<view class="page-section">
+    <view class="weui-cells__title">驱动Id</view>
+    <text>选择需要上传的数据库类型）</text>
+    
+      <view class="weui-cells weui-cells_after-title">
+        <radio-group bindchange="checkboxChange">
+          <view class="weui-cell weui-check__label" wx:for="{{items}}" wx:key="value">
+            <view class="weui-cell__hd">
+              <radio value="{{item.value}}" checked="{{item.checked}}" name="dbDriverId"/>
+            </view>
+            <view class="weui-cell__bd">{{item.name}}</view>
+          </view>
+        </radio-group>
+      </view>
+   
+</view>
+<template is="dbforms"></template>
+<view class="btn-area">
+        <button style="margin: 30rpx; width=20rpx" type="primary" formType="submit">Submit</button>
+        <button style="margin: 30rpx 0" formType="reset">Reset</button>
+  </view>
+
+  </form>

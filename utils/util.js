@@ -20,7 +20,9 @@ const formatNumber = n => {
 }
 function dbquery(){}
 function dbmodify(){
-    
+    wx.redirectTo({
+      url: '/pages/db-modify/dbmodify',
+    })
 }
 
 
