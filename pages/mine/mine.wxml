@@ -1,13 +1,13 @@
 <!--pages/mine/mine.wxml-->
 <component id="component"></component>
 <block wx:if="{{id}}">
-  <view>
-    <navigator url="../login/login" open-type="redirect" >登录/注册</navigator>
-  </view>
-</block>
-<block wx:else>
-    
     <view class='headImageView'>
        <open-data type="userAvatarUrl" ></open-data>
      </view>
+</block>
+<block wx:else>
+  <view>
+    <navigator url="../login/login" open-type="redirect" >登录/注册</navigator>
+  </view>
+    
 </block>

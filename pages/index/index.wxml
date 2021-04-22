@@ -21,8 +21,8 @@
     <text>添加数据库配置</text>
   </view>
   <view    wx:for="{{dbarrays}}" wx:key="key" class="image_group">
-    <image src="../image/table.png" class="image_db" id="{{item.dbId}} "></image>
+    <image src="../image/table.png" class="image_db" id="{{item.dbId}}" bindlongpress="dboption"></image>
     <text>{{item.shortName}}</text>
-
+    <text>\r\n</text>
   </view>
 </view>

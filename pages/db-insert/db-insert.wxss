@@ -14,3 +14,5 @@
   display: flex;
   justify-content: center;
 }
+
+@import 'db-insert-wxa-auto-dark.wxss'

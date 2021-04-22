@@ -48,6 +48,10 @@ app.getOpenid().then(function (res) {
   }
 }); 
 }
+
+function setcb(){
+  
+}
 module.exports={
   welogin:wechatLogin,
   opidget:openidRequests,

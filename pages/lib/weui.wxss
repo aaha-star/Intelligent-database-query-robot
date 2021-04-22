@@ -162,6 +162,7 @@ icon {
   word-break: break-all;
 }
 .weui-input {
+  width:600rpx;
   height: 2.58823529em;
   min-height: 2.58823529em;
   line-height: 2.58823529em;
@@ -1040,3 +1041,4 @@ icon {
   color: #09BB07;
   white-space: nowrap;
 }
+@import 'weui-wxa-auto-dark.wxss'

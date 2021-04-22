@@ -1,1 +1,2 @@
 /* component/login/login.wxss */
+@import 'login-wxa-auto-dark.wxss'
