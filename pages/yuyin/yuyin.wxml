@@ -1,0 +1,16 @@
+<view class="yuyinWrap">
+  <image class='bcg' src='/image/snow_road.jpg' mode='aspectFill'></image>
+  <textarea class='yuyinCon' placeholder='请输入内容' value='{{content}}'></textarea>
+  <!--  -->
+  <view class=''>
+    <button class="yuyinBtn {{recordState == true ? 'yuyinBtnBg':''}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
+      <text wx:if="{{recordState == false}}">按住 说话</text>
+      <text wx:else>松开 结束</text>
+    </button>
+  </view>
+  <!-- 开始语音 弹出语音图标表示正在录音 -->
+  <cover-view class="startYuyinImage" wx:if="{{recordState == true}}">
+    <cover-image src="/image/yuyin-min.jpg"></cover-image>
+    <cover-view>开始语音</cover-view>
+  </cover-view>
+</view>

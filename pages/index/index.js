@@ -4,6 +4,7 @@ let login = require("../../utils/login")
 let check = require("../../utils/checksname")
 let dbop = require("../../utils/util")
 Page({
+ 
   onLoad: function () {
     let that = this
     login.getopid()
@@ -56,9 +57,9 @@ Page({
       success(res) {
         let index = res.tapIndex
         switch (index) {
-          case 0: dbop.dbquery(dbid);that.onLoad(); break;
-          case 1: dbop.dbmodify(dbid);that.onShow(); break;
-          case 2: dbop.dbdelete(dbid);that.onShow(); break;
+          case 0: dbop.dbquery(dbid); that.onLoad(); break;
+          case 1: dbop.dbmodify(dbid); that.onShow(); break;
+          case 2: dbop.dbdelete(dbid); that.onShow(); break;
         }
       },
       fail(res) {

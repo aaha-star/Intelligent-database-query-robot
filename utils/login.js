@@ -40,9 +40,7 @@ function getopenid(){
 let that=this
 app.getOpenid().then(function (res) {
   if (res.status == 200) {
-  
      let opid=wx.getStorageSync('openid')
-     console.log("已将openid存入Storage，openid为"+opid)
   } else {
     console.log(res.data);
   }

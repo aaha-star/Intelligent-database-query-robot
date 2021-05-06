@@ -18,7 +18,11 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : `0${n}`
 }
-function dbquery(){}
+function dbquery(dbid){
+  wx.redirectTo({
+    url: '/pages/yuyin/yuyin?id='+dbid,
+  })
+}
 function dbmodify(dbid){
     wx.redirectTo({
       url: '/pages/db-modify/dbmodify?id='+dbid,
