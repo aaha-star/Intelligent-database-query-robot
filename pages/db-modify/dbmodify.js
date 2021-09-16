@@ -75,7 +75,7 @@ Page({
 
     var url = currentPage.route    //当前页面url
     var options = currentPage.options    //如果要获取url中所带的参数可以查看options
-    let id=options.id
+    let id=options.id//获取到了携带参数dbid
     let dbdata=e.detail.value
     dbdata.dbDriverId=this.data.driverId
     console.log(dbdata.dbDriverId)

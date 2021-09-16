@@ -1,0 +1,28 @@
+.table {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+flex-direction: column;
+border: 2px solid rgb(32, 17, 17);
+}
+.tr {
+display: flex;  
+ justify-content: space-around;
+flex-wrap: nowrap;
+}
+.td {
+display: flex;
+justify-content: space-around;
+}
+.bg-g{
+ background: rgba(26, 226, 183, 0.651);
+}
+.bg-b{
+ background: hsl(0, 12%, 94%);
+}
+.th {
+  display: inline;
+  flex-grow: 1;
+  width: 180rpx;
+  height: 90rpx;
+}

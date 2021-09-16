@@ -3,9 +3,31 @@ let gb = app.globalData
 let login = require("../../utils/login")
 let check = require("../../utils/checksname")
 let dbop = require("../../utils/util")
+const plugin = requirePlugin('WechatSI');
 Page({
  
   onLoad: function () {
+    wx.login({
+     success(res){
+       wx.request({
+         url: gb.baseurl+'/user/openId?code='+res.code,
+         method:'GET',
+         header:{
+         "content":"application/json"
+         },
+         success(res){
+           
+           let opid=res.data.data.openId
+           wx.setStorageSync('openID', opid)
+         }
+       })
+     }
+    })
+   
+
+
+
+
     let that = this
     login.getopid()
     let openId = wx.getStorageSync('openid')
@@ -39,7 +61,10 @@ Page({
         selected: 0
       })
     }
+
   },
+
+
 
 
   db_insert: function () {
@@ -59,7 +84,7 @@ Page({
         switch (index) {
           case 0: dbop.dbquery(dbid); that.onLoad(); break;
           case 1: dbop.dbmodify(dbid); that.onShow(); break;
-          case 2: dbop.dbdelete(dbid); that.onShow(); break;
+          case 2: dbop.dbdelete(dbid); break;
         }
       },
       fail(res) {
@@ -67,7 +92,7 @@ Page({
       }
     })
 
-  }
+  },
 
 
 })

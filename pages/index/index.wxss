@@ -84,7 +84,7 @@
 .image_db{
   width: 350rpx;
   height:270rpx;
-  background-color: #D6D6D6;
+  background-color: hsl(0, 12%, 94%);
   justify-content: center;
 }
 .image_group{

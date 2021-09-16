@@ -10,8 +10,8 @@ Component({
       text: "数据库"
     }, {
       pagePath: "/pages/mine/mine",
-      iconPath: "../image/icon_API.png",
-      selectedIconPath: "../image/icon_API_HL.png",
+      iconPath: "../image/my1.png",
+      selectedIconPath: "../image/my2.png",
       text: "我的"
     }]
   },

@@ -1,1 +1,21 @@
-/* pages/mine/mine.wxss */
+/* 登陆页面 */
+.myLogin{
+  height: 400rpx;
+  background-color: hsl(0, 12%, 94%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.myLogin image{
+  height: 200rpx;
+  width:200rpx;
+  border-radius: 50%;
+}
+.myLogin text{
+  color: white;
+}
+/* 收藏列表 */
+.myFavorite{
+  padding: 20rpx;
+}

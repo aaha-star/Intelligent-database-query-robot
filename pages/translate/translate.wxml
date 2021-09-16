@@ -1,0 +1,19 @@
+<textarea class="textarea-container" placeholder='请输入内容' value='{{content}}' bindinput='inputChange'>
+</textarea>
+
+<view class='btn-container' bindtap="playVoice">
+  <view>播放声音</view>
+</view>
+
+
+<view class='btn-container' bindtap="translateToEnglish">
+  <view>中译英(文字翻译)</view>
+</view>
+
+<view class='btn-container' bindtap="translateToChinese">
+  <view>英中译(文字翻译)</view>
+</view>
+
+
+<view class="cell-title">翻译结果</view>
+<view class="cell-content">{{translateResult}}</view>

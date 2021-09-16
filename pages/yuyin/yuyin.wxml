@@ -1,12 +1,18 @@
 <view class="yuyinWrap">
-  <image class='bcg' src='/image/snow_road.jpg' mode='aspectFill'></image>
-  <textarea class='yuyinCon' placeholder='请输入内容' value='{{content}}'></textarea>
+
+  
+  <textarea class='yuyinCon' placeholder='请输入内容' bindinput="searchword"></textarea>
+  <view wx:for="{{searcharray}}">
+
+  {{index}}: {{item.sname}},{{item.gender}},{{item.age}},{{item.sid}}
+</view>
   <!--  -->
-  <view class=''>
+  <view class='yuyinbtns'>
     <button class="yuyinBtn {{recordState == true ? 'yuyinBtnBg':''}}" bindtouchstart="touchStart" bindtouchend="touchEnd">
       <text wx:if="{{recordState == false}}">按住 说话</text>
       <text wx:else>松开 结束</text>
     </button>
+    <button bindtap='yuyinsearch'> 查询</button>
   </view>
   <!-- 开始语音 弹出语音图标表示正在录音 -->
   <cover-view class="startYuyinImage" wx:if="{{recordState == true}}">

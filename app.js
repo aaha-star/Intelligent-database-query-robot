@@ -1,4 +1,5 @@
 // app.js
+var plugin = requirePlugin("chatbot");
 App({
   onLaunch() {
     let nowopid=this.globalData.nowuseropid
@@ -7,10 +8,29 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     let that=this
-    // 登录
-    wx.login({
-  
-    })
+    let opId=wx.getStorageSync('openid')
+
+
+
+    plugin.init({
+      appid: "xollf73uAAggKwCpdc6rE1WAOIx1vV",
+      openid: "oYy7J5Hz6qnTLE-02CFixOUH7k78", // 小程序的openid，必填项
+      success: () => {},
+      fail: error => {console.log("nivsi")},
+      guideList:['开始查询','结束查询','显示学生表'],
+      textToSpeech: 1,
+      welcome: "请问有什么需要帮助？",
+      background: "rgba(247,251,252,1)",
+      guideCardHeight: 40,
+      operateCardHeight: 90,
+      history: true,
+      navHeight: 0,
+      robotHeader: 'https://res.wx.qq.com/mmspraiweb_node/dist/static/miniprogrampageImages/talk/leftHeader.png',
+      userHeader: 'https://res.wx.qq.com/mmspraiweb_node/dist/static/miniprogrampageImages/talk/rightHeader.png',
+      userName: 'xgy',
+      anonymous: false,
+      hideMovableButton: false
+   });
   },
 
 getOpenid: function () {

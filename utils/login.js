@@ -41,6 +41,7 @@ let that=this
 app.getOpenid().then(function (res) {
   if (res.status == 200) {
      let opid=wx.getStorageSync('openid')
+
   } else {
     console.log(res.data);
   }

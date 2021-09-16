@@ -1,0 +1,16 @@
+<!--pages/srResult/srResult.wxml-->
+
+<view class="table">
+<view class="td">
+  <text class="th bg-b" wx:for="{{keylist}}"  wx:key="key">
+ <text >{{item}}</text>
+ </text>
+</view>
+
+
+ <block wx:for="{{valuelist}}"  wx:key="key">
+ <view  class="tr bg-w">
+ <text class="th bg-g" wx:for="{{item}}">{{item}}</text>
+ </view>
+ </block>
+</view>

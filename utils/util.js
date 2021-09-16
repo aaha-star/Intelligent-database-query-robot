@@ -20,9 +20,10 @@ const formatNumber = n => {
 }
 function dbquery(dbid){
   wx.redirectTo({
-    url: '/pages/yuyin/yuyin?id='+dbid,
+    url: '/pages/chatbot/chatbot?id='+dbid,
   })
 }
+
 function dbmodify(dbid){
     wx.redirectTo({
       url: '/pages/db-modify/dbmodify?id='+dbid,
@@ -44,6 +45,11 @@ function dbdelete(dbid){
           console.log(res)
           wx.switchTab({
             url: '../index/index',
+            success: function (e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onLoad();
+            }
           })
         },
         fail(res){
@@ -52,9 +58,29 @@ function dbdelete(dbid){
       })
 }
 
+function getAccesstoken(){
+  wx.request({
+    url:' https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx6a0d19e2490d51d5&secret=02d8da61a66479cdbf4577c72ff1877b',
+    method:'GET',
+    header:{
+      'content':'application/json',
+    },
+    success(res){
+      console.log(res)
+    },
+    fail(res){
+      console.log(res)
+    }
+  })
+}
+
+function ZUtranslate(word){
+    
+}
 
 module.exports = {
   formatTime,
+  getAccesstoken:getAccesstoken,
   dbquery:dbquery,
   dbmodify:dbmodify,
   dbdelete:dbdelete,

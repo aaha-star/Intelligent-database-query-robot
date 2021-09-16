@@ -1,12 +1,15 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/chatbot/chatbot",
+    "pages/translate/translate",
     "pages/mine/mine",
     "pages/db-insert/db-insert",
     "pages/logs/logs",
     "pages/login/login",
     "pages/db-modify/dbmodify",
-    "pages/yuyin/yuyin"
+    "pages/yuyin/yuyin",
+    "pages/srResult/srResult"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -41,13 +44,18 @@
   },
   "debug": true,
   "style": "v2",
-
   "plugins": {
+    "chatbot": {
+      "version": "1.2.21",
+      "provider": "wx8c631f7e9f2465e1"
+    },
     "WechatSI": {
-      "version": "0.3.0",
+      "version": "0.3.4",
       "provider": "wx069ba97219f66d99"
     }
   },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "sitemapLocation": "sitemap.json"
-
 }

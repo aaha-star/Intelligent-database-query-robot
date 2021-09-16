@@ -9,7 +9,6 @@
   border: 1px solid #ccc;
   margin: 0 auto;
   padding: 10rpx 10rpx 70rpx;
-  color: #fff;
 }
  
 .yuyin {
@@ -42,28 +41,20 @@
    color: #606267;
   font-size: 60rpx;
 }
- 
-.yuyinBtn {
-  width: 70%;
-  height: 70rpx;
-  position: absolute;
-  right: 112rpx;
-  bottom: 12rpx;
-  border: 1px solid #eee;
-  background: #fff;
-  color: #606267;
-  line-height: 62rpx;
+
+.yuyinbtns{
+  display: flex;
+  justify-content: space-around;
 }
  
+.yuyinBtn{
+  background: #E0FFFF;
+  width: 1rpx;
+}
 .yuyinBtnBg {
-  background: #eee;
+  background: #73dbef;
 }
  
-.yuyinBtn::after {
-  /* background: #fff; *//* color: #000; */
-  border-radius: 0;
-  border: none;
-}
  
 .startYuyinImage {
   position: fixed;

@@ -1,4 +1,5 @@
 const app = getApp();
+let baseurl=app.globalData.baseurl
 //引入插件：微信同声传译
 const plugin = requirePlugin('WechatSI');
 //获取全局唯一的语音识别管理器recordRecoManager
@@ -18,6 +19,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var pages = getCurrentPages()    //获取加载的页面
+    var currentPage = pages[pages.length - 1]    //获取当前页面的对象
+
+    var url = currentPage.route    //当前页面url
+    var options = currentPage.options    //如果要获取url中所带的参数可以查看options
+    console.log(options)
     //识别语音
     this.initRecord();
   },
@@ -82,4 +89,52 @@ Page({
     // 语音结束识别
     manager.stop();
   },
+
+  searchword:function(e){
+    this.setData({
+      content:e.detail.value
+    })
+  },  
+  yuyinsearch:function(e){
+    console.log(e)
+    console.log(this.data.content)
+    let searchword=this.data.content
+    let data={}
+    let openId=wx.getStorageSync('openid')
+    var pages = getCurrentPages()    //获取加载的页面
+    var currentPage = pages[pages.length - 1]    //获取当前页面的对象
+
+    var url = currentPage.route    //当前页面url
+    var options = currentPage.options    //如果要获取url中所带的参数可以查看options
+    console.log(pages)
+    console.log(options)
+    let id=options.id//获取到了携带参数dbid
+    console.log(id)
+    data.dbId=id
+    data.srSql=searchword
+    let that=this
+    wx.request({
+      url: baseurl+'/select/',
+      data:data,
+      method:"POST",
+      header:{
+        'content-type': 'application/json',
+        'Authorization':openId
+      },
+      success(res){
+        console.log(res.data.data)
+        let searcharra=new Array()
+ 
+          that.setData({
+            searcharray:res.data.data
+          })
+     
+
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  }
+  
 })

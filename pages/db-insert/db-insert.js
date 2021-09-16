@@ -20,7 +20,7 @@ Page({
     let that=this
     login.getopid()
     let openId=wx.getStorageSync('openid')
-  
+    console.log(openId)
     wx.request({
       url:gb.baseurl+ '/driver/',
       date:{},
@@ -30,7 +30,7 @@ Page({
         'Authorization':openId
       },
       success(res){
-      console.log(res.data.data)
+      console.log(res)
       for(let i=0;i<res.data.data.length;++i){
         let value='items['+i+'].value'
         console.log(value)
@@ -82,9 +82,7 @@ Page({
         console.log(res)
       }
       })
-      wx.showModal({
-        title:'数据库配置提交'
-      })
+     
       
 
   }
